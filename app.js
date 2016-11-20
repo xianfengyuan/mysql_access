@@ -3,11 +3,12 @@ var path = require('path');
 var mysql = require('mysql');
 var app = express();
 var bodyParser = require('body-parser');
+var db = require(path.join(__dirname, 'config.json'))
 
 var connection = mysql.createConnection({
-  host     : 'aurora.cqiybs4tphyt.us-west-2.rds.amazonaws.com',
-  user     : 'master',
-  password : '12345678'
+   host     : db.host,
+   user     : db.user,
+   password : db.password
 });
 
 connection.query('USE javabase');
