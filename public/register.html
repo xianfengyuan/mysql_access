@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Simple login</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+        var user,pass,email,desc,price;
+        $("#submit").click(function(){
+          user=$("#user").val();
+          pass=$("#password").val();
+          email=$("#email").val();
+          desc=$("#desc").val();
+          price=$("#price").val();
+          $.post("http://localhost:3000/login",{user: user,password: pass,email: email,desc: desc, price: price}, function(data){
+      if(data==='done')
+      {
+      alert("login success");
+      }
+      window.location.href = "http://localhost:3000/";
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello people !</h1>
+    <input type="TEXT" id="user" size="40"><br>
+    <input type="password" id="password" size="40"><br>
+    <input type="TEXT" id="email" size="40"><br>
+    <input type="TEXT" id="desc" size="40"><br>
+    <input type="TEXT" id="price" size="40"><br>
+    <input type="button" id="submit" value="Submit">
+  </body>
+</html>
