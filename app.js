@@ -3,7 +3,7 @@ var path = require('path');
 var mysql = require('mysql');
 var app = express();
 var bodyParser = require('body-parser');
-var db = require(path.join(__dirname, 'config.json'))
+var db = require('./config')
 
 var connection = mysql.createConnection({
    host     : db.host,

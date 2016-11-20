@@ -17,4 +17,6 @@ Gemfile.lock
 .bundle
 **/.idea
 config.json
+config.js
+
 
