@@ -11,12 +11,12 @@
           email=$("#email").val();
           desc=$("#desc").val();
           price=$("#price").val();
-          $.post("http://localhost:3000/login",{user: user,password: pass,email: email,desc: desc, price: price}, function(data){
+          $.post("/login",{user: user,password: pass,email: email,desc: desc, price: price}, function(data){
       if(data==='done')
       {
       alert("login success");
       }
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "/";
           });
         });
       });
