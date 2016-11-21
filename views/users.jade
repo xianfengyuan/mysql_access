@@ -1,7 +1,12 @@
 html
   head
     title Welcome
-  body
-    #container
-      - each user in users
-        p=user.name
+div
+  table
+    thead
+      tr: th Registered User
+    tbody
+      each user, i in users
+        tr(class=(i % 2 == 0) ? 'odd' : 'even') 
+          td
+            a(href='/admin/user/' + user.id) #{user.name} - #{user.email} - #{user.description} - #{user.price}

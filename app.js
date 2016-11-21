@@ -37,7 +37,8 @@ app.post('/login',function(req,res){
    var price=req.body.price;
    
    console.log("User name = "+user_name+", password is "+password);
-   connection.query('INSERT INTO services VALUES (5, ' + user_name + ',' + password + ',' + email + ',' + desc + ',' + price + ')', function(err, rows) {
+   connection.query('INSERT INTO services (name, password, email, description, price) VALUES ("' + user_name + '","' + password + '","' + email + '","' + desc + '","' + price + '")', function(err, rows) {
+      if (err) return console.log(err);
       res.send('done');
    });
 });
