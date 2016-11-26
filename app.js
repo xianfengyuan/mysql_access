@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res){
   connection.query('SELECT * FROM services', function(err, rows){
-    res.render('users', {users : rows});
+     res.json({users : rows});
   });
 });
 app.get('/register', function(req, res){
