@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
-  connection.query('SELECT * FROM services', function(err, rows){
+   connection.query('SELECT * FROM services', function(err, rows){
+      if(err) return res.json({error: err});
      res.json({users : rows});
   });
 });
